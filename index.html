@@ -9,7 +9,118 @@ body{
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg,#ffd89b,#19547b);
     height:100vh;
-    display:flex;
+    display:flex<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>tanggal 12 buka bareng gue yaa</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#ffd89b,#19547b);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:0;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:15px;
+text-align:center;
+width:360px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+text-transform: lowercase;
+}
+
+button{
+margin:10px;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.next{
+background:#ff7a18;
+color:white;
+}
+
+.yes{
+background:#28a745;
+color:white;
+}
+
+.no{
+background:#ff4d4d;
+color:white;
+position:relative;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>tanggal 12 buka bareng gue yaa 🌙</h1>
+
+<p id="text">haii</p>
+
+<button class="next" onclick="nextText()">klik dulu</button>
+
+<div id="choices"></div>
+
+</div>
+
+<script>
+
+let step = 0;
+
+let texts = [
+"haii",
+"sebelum libur lebaran",
+"dan kamu nanti susah dihubungin karena mudik",
+"jadi kamu kudu ikut jalan bareng gue",
+"sekalian bukber gitu deh 😌",
+"nah sekarang pilih jawaban yang benar ya"
+];
+
+function nextText(){
+step++;
+
+if(step < texts.length){
+document.getElementById("text").innerHTML = texts[step];
+}else{
+document.querySelector(".next").style.display="none";
+
+document.getElementById("choices").innerHTML = `
+<button class="yes" onclick="wa()">mau</button>
+<button class="no" id="no">gamau</button>
+`;
+
+let noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover",function(){
+let x = Math.random()*200 - 100;
+let y = Math.random()*200 - 100;
+noBtn.style.transform = "translate("+x+"px,"+y+"px)";
+});
+
+}
+}
+
+function wa(){
+window.location.href="https://wa.me/6285707008939?text=sip aku ikut bukber tanggal 12 yaa 😌";
+}
+
+</script>
+
+</body>
+</html>;
     justify-content:center;
     align-items:center;
     margin:0;
